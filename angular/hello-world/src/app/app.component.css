@@ -1,0 +1,12 @@
+button {
+  position: relative;
+}
+
+.menu {
+  background: white;
+  border: 1px solid black;
+  padding: 5px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}

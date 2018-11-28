@@ -1,0 +1,16 @@
+<div *ngIf="happy == true">I am happy</div>
+<div *ngIf="happy == false">I am sad</div>
+<button type="button" (click)="switchMood()">SWITCH</button>
+
+
+<button (click)="increment()">Button {{ counter }}</button>
+
+
+<button (click)="toggle()">
+  <div class="menu" *ngIf="show">
+      <a href="https://google.com" target="_blank">Google</a>
+      <br>
+      <a href="https://ibm.com" target="_blank">IBM</a>
+    </div>
+  dropdown
+</button>
