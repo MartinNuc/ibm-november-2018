@@ -1,0 +1,338 @@
+What is union type?
+
+let x: number | string
+
+interface X {
+  age: number | string
+}
+
+function x(a: number | string, b: number | string): number | string {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What are generics?
+
+Array<string>
+
+class Bucket<T> {
+  insert(item: T, second: K) {
+
+  }
+}
+
+let x = new Bucket<string | number>();
+
+
+
+
+
+
+
+
+
+
+What is expressjs?
+
+web server
+
+
+
+
+
+
+
+
+
+
+
+
+What is path?
+
+URL https://www.google.com:443/something/blabla?variable=value&variable2=somethingelse#
+
+
+
+
+
+
+
+
+
+
+What are path parameters?
+
+app.get('/user/:id', (req, res) => {
+  let result = db.find({id: req.params.id})
+  res.send(result)
+});
+
+localhost:3000/user/800
+localhost:3000/user/500
+localhost:3000/user/Samatha
+
+
+
+
+
+
+
+
+
+
+
+
+What are query parameters?
+
+https://www.google.com:443/something/blabla?variable=value&variable2=somethingelse#
+
+app.get('/user/:id', (req, res) => {
+  let result = db.find({id: req.query.color})
+  res.send(result)
+});
+
+
+localhost:3000/user/800?whatever=anything&color=black
+localhost:3000/user/500
+
+
+
+
+
+
+
+
+What is port?
+
+https://en.wikipedia.org/wiki/IBM#Finance
+
+
+
+
+
+
+
+
+
+
+
+What is http method?
+
+GET
+POST
+PUT /users/55
+{
+  name: 'Martin',
+  age: 32
+}
+PATCH
+DELETE
+
+
+
+
+
+
+
+
+
+
+
+What is status code?
+
+200
+3**
+404
+500
+
+
+
+
+
+
+
+
+
+
+
+
+What is a middle ware?
+Which built-in middleware do you know?
+
+static - 
+
+app.use('/static', express.static('public'))
+
+http://localhost:3000/static/image.jpg
+
+const fs = require('fs');
+
+app.get('/static/:fileName', (req, res) => {
+  const filename = req.params.fileName;
+  const content = fs.readFileSync(`public/${filename}`);
+  res.send(content);
+})
+
+function nameOfTheMiddleware(req, res, next) {
+  setTimeout(, 5000)
+}
+
+app.use(nameOfTheMiddleware)
+
+
+
+
+
+
+
+
+
+
+
+What is Angular?
+
+SPA
+
+
+
+
+
+
+
+
+
+
+
+
+What is component tree?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How do you create a new Angular project?
+
+
+ng new name-of-project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Component - for what is HTML, for what TS?
+
+css
+HTML
+ts
+.spec.ts
+
+TS:
+
+@Component{...}
+export class AppComponent {
+  counter = 0;
+}
+
+HTML
+
+{{ counter }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How do you do something on click?
+
+<div (click)="doSomething()"></div>
+
+TS:
+
+class AppComponent {
+
+  doSomething() {
+    ........
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+What is *ngIf?
+
+AngularJS x Angular
+
+
+<button *ngIf="show">click me</button>
+
+TS
+class AppComponent {
+  show = false;
+}
+

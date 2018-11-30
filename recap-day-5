@@ -1,0 +1,174 @@
+What is purpose of angular module?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How do you create a new component?
+
+ng generate component nameOfYourFancyComponent
+ng g c <name>
+
+
+
+
+
+
+
+
+
+
+
+How do you use component inside of another component?
+
+
+
+
+
+
+
+
+
+How does ngFor works?
+
+HTML:
+<ul>
+  <li *ngFor="let newVar of arrayInComponent">
+    {{newVar.name}} ({{newVar.age}})
+  </li>
+</ul>
+
+Martin (32)
+Luke (25)
+
+TS
+
+class Component {
+  arrayInComponent = [
+    {
+      name: 'Martin',
+      age: 32
+    },
+    {
+      name: 'Luke',
+      age: 25
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to pass data from the parent component to the child component?
+
+parent -> child
+PARENT HTML:
+<ul>
+  <li *ngFor="let personFromFor of arrayInComponent">
+    <app-child-component [person]="personFromFor" />
+  </li>
+</ul>
+
+INTERFACE:
+interface Person {
+  name: string;
+  age: number;
+}
+CHILD HTML: 
+{{person.name}} ({{person.age}})
+TS:
+@Component({
+  selector: 'app-child-component'
+})
+class ChildComponent {
+  @Input()
+  person: Person;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to send events from the child component to parent?
+
+
+PARENT HTML
+<app-child-component (messageFromChild)="informationFromChild($event)" />
+
+PARENT TS
+class ParentComponent {
+  informationFromChild(id: number) {
+    console.log(id);
+  }
+}
+
+
+CHILD TS
+
+class ChildComponent {
+  @Output()
+  messageFromChild = new EventEmitter<number>();
+
+  sendToParent() {
+    this.messageFromChild.emit(55);
+  }
+}
+
+CHILD HTML
+<button (click)="sendToParent()">Like!</button>

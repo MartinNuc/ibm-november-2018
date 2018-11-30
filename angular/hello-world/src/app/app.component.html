@@ -1,10 +1,60 @@
+
+
+
+<form #f="ngForm">
+  <label for="email">Email: </label>
+  <input [ngClass]="{'red-border': f.form.controls['email']?.invalid}"
+         id="email"
+         name="email"
+         [(ngModel)]="email"
+         required
+         email>
+  <div *ngIf="f.form.controls['email']?.invalid">Invalid</div>
+
+  <button [disabled]="f.invalid" (click)="save()">SAVE!</button>
+</form>
+
+
+
+
+
+<div>
+  <button (click)="createObservable()">Create observable</button>
+</div>
+
+{{ myObservable$ | async }}
+
+<p>
+  {{ joke?.value }}
+</p>
+
 <div *ngIf="happy == true">I am happy</div>
 <div *ngIf="happy == false">I am sad</div>
 <button type="button" (click)="switchMood()">SWITCH</button>
 
 
+
+
+
+<div [ngClass]="dynamicClass">This is text</div>
+<button (click)="toggleRed()">Change color</button>
+<button (click)="toggleBig()">Change font size</button>
+
+
+
+
+
+
+
+
+
 <button (click)="increment()">Button {{ counter }}</button>
 
+<app-timestamp-list [arrayInChild]="timestampService.timestampArray"></app-timestamp-list>
+
+
+
+<app-hello-world (message)="consoleLog($event)"></app-hello-world>
 
 <button (click)="toggle()">
   <div class="menu" *ngIf="show">
